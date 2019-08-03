@@ -1,4 +1,4 @@
-# Postgres Database on EC2
+# Postgres Database on remote server. Case is used on Ubuntu
 
 **NOTE:** This service needs a static ip.
 
@@ -55,10 +55,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 ```
 git clone https://github.com/marcopeg/humble-cli.git /home/ubuntu/.humble-cli
+
 sudo ln -s /home/ubuntu/.humble-cli/bin/humble.sh /usr/local/bin/humble
-
-sudo apt-get install make
-
 ```
 
 #### MakeCLI
