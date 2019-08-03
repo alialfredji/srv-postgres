@@ -1,0 +1,30 @@
+version: '3.4'
+services:
+
+#
+# Infrastructure
+# - humble boot services
+# - humble drop services
+#
+
+    postgres:
+        image: fetchq/fetchq:10.4-1.3.0
+        ports:
+            - ${PG_PORT}:5432
+        networks:
+            - production
+        environment:
+            POSTGRES_USER: ${PG_USERNAME}
+            POSTGRES_PASSWORD: ${PG_PASSWORD}
+            POSTGRES_DB: ${PG_DATABASE}
+        volumes:
+            - ${HUMBLE_DATA}/pg:/var/lib/postgresql/data
+            - ${HUMBLE_BACKUP}:/backup
+        restart: always
+
+#
+# Networks definition
+#
+
+networks:
+    production:
