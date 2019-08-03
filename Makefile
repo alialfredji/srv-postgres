@@ -23,5 +23,5 @@ stop-pg:
 run-pg:
 	humble stop postgres
 	humble rm -f postgres
-	HUMBLE_DATA=/docker-data HUMBLE_BACKUP=/docker-data/backup humble up -d postgres
+	humble up -d postgres
 	humble logs -f
