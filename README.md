@@ -32,9 +32,11 @@ sudo apt-get update
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-sudo docker run hello-world
+sudo gpasswd -a $USER docker
 
-sudo usermod -aG docker ubuntu
+newgrp docker
+
+docker run hello-world
 ```
 
 
