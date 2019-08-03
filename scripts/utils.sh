@@ -6,6 +6,7 @@ function help() {
     exit 0
 }
 
+DISK_PATH="/dev/nvme1n1"
 
 # Compose local properties with flag options
 while [ "$#" -ne 0 ] ; do
@@ -17,10 +18,10 @@ while [ "$#" -ne 0 ] ; do
             clear
             echo ""
             echo " ---- DISK INFO ----"
-            sudo file -s /dev/nvme1n1
+            sudo file -s $DISK_PATH
             echo ""
             echo "If DISK INFO show (data) execute this command:"
-            echo "----->   sudo mkfs -t xfs /dev/nvme1n1"
+            echo "----->   sudo mkfs -t xfs ${DISK_PATH}"
             echo ""
             echo ""
             shift
@@ -42,7 +43,7 @@ while [ "$#" -ne 0 ] ; do
         fs-mount)
             echo ""
             [ -d /docker-data ] || sudo mkdir /docker-data
-            sudo mount /dev/nvme1n1 /docker-data
+            sudo mount $DISK_PATH /docker-data
             humble utils fs-info
             shift
             ;;
