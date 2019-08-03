@@ -16,6 +16,9 @@ unmount-disk:
 	humble rm -f postgres
 	humble utils fs-unmount
 
+resize-disk:
+	sudo xfs_growfs -d /docker-data
+
 stop-pg:
 	humble stop postgres
 	humble rm -f postgres
