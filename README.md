@@ -1,6 +1,7 @@
 # Postgres Database on EC2
 
 **NOTE:** This service needs a static ip.
+
 **NOTE:** Activate termination protection on the EC2!!!
 
 ## Install Docker:
