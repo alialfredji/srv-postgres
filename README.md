@@ -36,9 +36,7 @@ sudo gpasswd -a $USER docker
 
 newgrp docker
 
-sudo docker run hello-world
-
-sudo usermod -aG docker ubuntu
+docker run hello-world
 ```
 
 
